@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+import React from 'react';
+import { Component } from 'react/cjs/react.production.min';
 import './App.css';
+import FormularioCadastro from './components/FormularioCadastro/FormularioCadastro';
+import { Container, Typography } from "@material-ui/core";
+import '@fontsource/roboto/300.css';
+import {validaCpf, validaSenha } from './models/cadastro';
 
-function App() {
+class App extends Component {
+  render (){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container component="article" maxWidth="xs">
+   <Typography variant="h2" component="h2" align="center">Formulário de Cadastro</Typography>
+   <FormularioCadastro aoEnviar={onSubmitForm} validacoes={{cpf:validaCpf, password:validaSenha}}/>
+   </Container>
   );
+}
+}
+
+function onSubmitForm(dados){
+  console.log(dados)
 }
 
 export default App;
