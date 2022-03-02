@@ -10,7 +10,7 @@
 
 
 <br>
-<img src="./public/login.png" alt="Login">
+
 <br>
 
 ### Second Page Personal Information
